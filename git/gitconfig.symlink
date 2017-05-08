@@ -26,6 +26,7 @@
   editor = vim
 
 [alias]
+	hub-new-repo = "!REPO=$(basename $PWD) GHUSER=$(git config --get github.user) PROXY=$(git config --get http.proxy);echo 'creating \"'$REPO'\" on Github? - Then type your OTP:';read OTP;curl -x \"$PROXY\" -u \"$GHUSER\" -H \"X-GitHub-OTP: $OTP\" -d {\\\"name\\\":\\\"$REPO\\\"} https://api.github.com/user/repos ;git remote add origin https://github.com/$GHUSER/$REPO.git;git push origin master"
 	st = status
 	ci = commit
 	br = branch
@@ -33,6 +34,7 @@
 	df = diff
 	dc = diff --cachd
 	lg = log -p
+	who = remote -v
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-files
