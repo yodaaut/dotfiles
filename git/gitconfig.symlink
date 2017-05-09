@@ -46,4 +46,4 @@
 [user]
 	signingkey = 96BFAEF944F0B118
 [credential]
-	helper = netrc
+	helper = netrc -f .netrc.gpg
